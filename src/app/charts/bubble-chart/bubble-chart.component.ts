@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Color } from 'ng2-charts';
+import { Color, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-bubble-chart',
@@ -16,29 +16,26 @@ export class BubbleChartComponent {
       xAxes: [{
         ticks: {
           min: 0,
-          max: 50,
+          max: 5,
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 50,
+          max: 5,
         }
       }]
     }
   };
   public bubbleChartType: ChartType = 'bubble';
   public bubbleChartLegend = true;
-
+  public bubbleChartLabels: Label[] = ['1', '2', '3', '4'];
   public bubbleChartData: ChartDataSets[] = [
     {
       data: [
-        { x: 15, y: 15, r: 15 },
-        { x: 25, y: 15, r: 25 },
-        { x: 36, y: 12, r: 33 },
-        { x: 10, y: 18, r: 18 },
+        { x: 2, y: 2, r: 6 },
       ],
-      label: 'Investment Equities',
+      label: 'I1',
     },
   ];
 
