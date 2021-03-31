@@ -1,0 +1,90 @@
+.nav-link {
+  color: #343a40;
+  background-color: transparent !important;
+}
+
+.active {
+  color: #343434 !important;
+}
+
+.nav-link:hover {
+  background-color: #343a40 !important;
+  color: #fff !important;
+}
+
+.desc-diagram {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
+.subtitle {
+  text-align: center;
+  color: #343a40;
+}
+
+.control-diagram {
+  display: flex;
+}
+
+.img-diagram {
+  width: 100%;
+}
+
+.btn-diagram {
+  align-self: center;
+}
+
+.button {
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.button:last-child {
+  margin-bottom: 0;
+}
+
+.diagram {
+  margin-bottom: 20px;
+}
+
+.specified-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.measured-data {
+  justify-content: space-between;
+  display: flex;
+}
+
+
+.input-data {
+  max-width: 50px;
+}
+
+.cub-diagram {
+  width: 150px;
+  height: 150px;
+  background-color: #343a40;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.control-diagram-data {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.diagram-data {
+  display: flex;
+}

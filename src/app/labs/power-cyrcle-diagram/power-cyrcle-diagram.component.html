@@ -1,0 +1,141 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row header">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Setting</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row diagram">
+      <div class="desc-diagram">
+        <h3 class="title">Laboratory work No. 1 "Power circle diagram"</h3>
+        <h5 class="subtitle">Power line</h5>
+      </div>
+      <div class="control-diagram">
+        <img class="img-diagram" src="assets/figure1.png" alt="">
+        <div class="btn-diagram">
+          <button type="button" class="btn btn-outline-dark button button-150">Calculate</button>
+          <button type="button" class="btn btn-outline-dark button button-150">Chart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row ">
+      <div class="specified-data control-data col-3">
+        <div class="specified-field">
+          <label class="label-name" for="G1">Voltage G1, U1 kV</label>
+          <input class="input-data" type="number" id="G1">
+        </div>
+        <div class="specified-field">
+          <label for="G2">Voltage G2, U2 kV</label>
+          <input class="input-data" type="number" id="G2">
+        </div>
+        <div class="specified-field">
+          <label for="degr">Angle delta, degr</label>
+          <input class="input-data" type="number" id="degr">
+        </div>
+        <div class="specified-field">
+          <label for="RT1">Transformer T1, R<small>T1</small></label>
+          <input class="input-data" type="number" id="RT1">
+        </div>
+        <div class="specified-field">
+          <label for="XT1">Transformer T1, X<small>T1</small></label>
+          <input class="input-data" type="number" id="XT1">
+        </div>
+        <div class="specified-field">
+          <label for="RT2">Transformer T2, R<small>T2</small></label>
+          <input class="input-data" type="number" id="RT2">
+        </div>
+        <div class="specified-field">
+          <label for="XT2">Transformer T2, X<small>T2</small></label>
+          <input class="input-data" type="number" id="XT2">
+        </div>
+        <div class="specified-field">
+          <label for="RL">Line, R<small>L</small></label>
+          <input class="input-data" type="number" id="RL">
+        </div>
+        <div class="specified-field">
+          <label for="XL">Line, X<small>L</small></label>
+          <input class="input-data" type="number" id="XL">
+        </div>
+        <div class="specified-field">
+          <label for="BL">Line, B<small>L</small></label>
+          <input class="input-data" type="number" id="BL">
+        </div>
+      </div>
+      <div class="control-diagram-data col-6">
+        <div class="diagram-data">
+          <div >
+            <app-bubble-chart></app-bubble-chart>
+
+          </div>
+          <div class="cub-diagram"></div>
+          <div class="cub-diagram"></div>
+        </div>
+        <div class="diagram-data">
+          <div class="cub-diagram"></div>
+          <div class="cub-diagram"></div>
+          <div class="cub-diagram"></div>
+        </div>
+      </div>
+      <div class="measured-field col-3">
+        <div class="measured-data">
+          <label for="degrMeasured">Angle delta, degr</label>
+          <input class="input-data" type="number" id="degrMeasured">
+        </div>
+        <div class="measured-data">
+          <label for="I1">Current I1, A</label>
+          <input class="input-data" type="number" id="I1">
+        </div>
+        <div class="measured-data">
+          <label for="I2">Current I2, A</label>
+          <input class="input-data" type="number" id="I2">
+        </div>
+        <div class="measured-data">
+          <label for="P1">Active power P1, kW</label>
+          <input class="input-data" type="number" id="P1">
+        </div>
+        <div class="measured-data">
+          <label for="P2">Active power P2, kW</label>
+          <input class="input-data" type="number" id="P2">
+        </div>
+        <div class="measured-data">
+          <label for="Q1">Reactive power Q1, kvar</label>
+          <input class="input-data" type="number" id="Q1">
+        </div>
+        <div class="measured-data">
+          <label for="Q2">Reactive power Q2, kvar</label>
+          <input class="input-data" type="number" id="Q2">
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <app-bar-chart></app-bar-chart>
+    <app-bubble-chart></app-bubble-chart>
+    <app-doughnut-chart></app-doughnut-chart>
+    <app-line-chart></app-line-chart>
+    <app-pie-chart></app-pie-chart>
+    <app-radar-chart></app-radar-chart> -->
+
+  </div>
+</div>
