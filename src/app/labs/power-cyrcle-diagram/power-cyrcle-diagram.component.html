@@ -33,7 +33,6 @@
   </div>
 
   <div class="row ">
-
     <div class="specified-data control-data col-2 offset-md-1">
       <div class="subtitle-data mb-3 text-center">Specified data</div>
       <div class="specified-field">
@@ -50,31 +49,31 @@
       </div>
       <div class="specified-field">
         <label for="RT1">Transformer T1, R<small>T1</small></label>
-        <input class="input-data" type="number" id="RT1" [(ngModel)]="rt1">
+        <input class="input-data" type="number" id="RT1" [(ngModel)]="rt1j">
       </div>
       <div class="specified-field">
         <label for="XT1">Transformer T1, X<small>T1</small></label>
-        <input class="input-data" type="number" id="XT1" [(ngModel)]="xt1">
+        <input class="input-data" type="number" id="XT1" [(ngModel)]="xt1i">
       </div>
       <div class="specified-field">
         <label for="RT2">Transformer T2, R<small>T2</small></label>
-        <input class="input-data" type="number" id="RT2" [(ngModel)]="rt2">
+        <input class="input-data" type="number" id="RT2" [(ngModel)]="rt2j">
       </div>
       <div class="specified-field">
         <label for="XT2">Transformer T2, X<small>T2</small></label>
-        <input class="input-data" type="number" id="XT2" [(ngModel)]="xt2">
+        <input class="input-data" type="number" id="XT2" [(ngModel)]="xt2i">
       </div>
       <div class="specified-field">
         <label for="RL">Line, R<small>L</small></label>
-        <input class="input-data" type="number" id="RL" [(ngModel)]="rl">
+        <input class="input-data" type="number" id="RL" [(ngModel)]="rlj">
       </div>
       <div class="specified-field">
         <label for="XL">Line, X<small>L</small></label>
-        <input class="input-data" type="number" id="XL" [(ngModel)]="xl">
+        <input class="input-data" type="number" id="XL" [(ngModel)]="xli">
       </div>
       <div class="specified-field">
         <label for="BL">Line, B<small>L</small></label>
-        <input class="input-data" type="number" id="BL" [(ngModel)]="bl">
+        <input class="input-data" type="number" id="BL" [(ngModel)]="bli">
       </div>
     </div>
     <div class="control-diagram-data col-6">
@@ -118,11 +117,26 @@
         <span class="input-data form-control"></span>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div>
-          <span>{{ u1Calculation() }}</span>
-        </div>
-      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <span>u1 >> {{ this.u1Calc }}</span>
+      <br>
+      <span>u2 >> {{ this.u2Calc }}</span>
+      <br>
+      <span>zt1 >> {{ this.zt1Calc }}</span>
+      <br>
+      <span>{{'zt2 >> '}}{{ this.zt2Calc }}</span>
+      <br>
+      <span>{{'zl >> '}}{{ this.zlCalc }}</span>
+      <br>
+      <span>{{'bl >> '}}{{ this.blCalc }}</span>
+      <br>
+      <br>
+      <br>
+      <!-- <span>{{'y22 >> '}}{{ this.y22Calc }}</span> -->
     </div>
   </div>
+</div>
+
