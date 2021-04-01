@@ -38,43 +38,43 @@
       <div class="subtitle-data mb-3 text-center">Specified data</div>
       <div class="specified-field">
         <label class="label-name" for="G1">Voltage G1, U1 kV</label>
-        <input class="input-data" type="number" id="G1">
+        <input class="input-data" type="number" id="G1" [(ngModel)]="u1">
       </div>
       <div class="specified-field">
         <label for="G2">Voltage G2, U2 kV</label>
-        <input class="input-data" type="number" id="G2">
+        <input class="input-data" type="number" id="G2" [(ngModel)]="u2">
       </div>
       <div class="specified-field">
         <label for="degr">Angle delta, degr</label>
-        <input class="input-data" type="number" id="degr">
+        <input class="input-data" type="number" id="degr" [(ngModel)]="angle">
       </div>
       <div class="specified-field">
         <label for="RT1">Transformer T1, R<small>T1</small></label>
-        <input class="input-data" type="number" id="RT1">
+        <input class="input-data" type="number" id="RT1" [(ngModel)]="rt1">
       </div>
       <div class="specified-field">
         <label for="XT1">Transformer T1, X<small>T1</small></label>
-        <input class="input-data" type="number" id="XT1">
+        <input class="input-data" type="number" id="XT1" [(ngModel)]="xt1">
       </div>
       <div class="specified-field">
         <label for="RT2">Transformer T2, R<small>T2</small></label>
-        <input class="input-data" type="number" id="RT2">
+        <input class="input-data" type="number" id="RT2" [(ngModel)]="rt2">
       </div>
       <div class="specified-field">
         <label for="XT2">Transformer T2, X<small>T2</small></label>
-        <input class="input-data" type="number" id="XT2">
+        <input class="input-data" type="number" id="XT2" [(ngModel)]="xt2">
       </div>
       <div class="specified-field">
         <label for="RL">Line, R<small>L</small></label>
-        <input class="input-data" type="number" id="RL">
+        <input class="input-data" type="number" id="RL" [(ngModel)]="rl">
       </div>
       <div class="specified-field">
         <label for="XL">Line, X<small>L</small></label>
-        <input class="input-data" type="number" id="XL">
+        <input class="input-data" type="number" id="XL" [(ngModel)]="xl">
       </div>
       <div class="specified-field">
         <label for="BL">Line, B<small>L</small></label>
-        <input class="input-data" type="number" id="BL">
+        <input class="input-data" type="number" id="BL" [(ngModel)]="bl">
       </div>
     </div>
     <div class="control-diagram-data col-6">
@@ -88,7 +88,7 @@
       </div>
     </div>
     <div class="measured-field col-2">
-    <div class="subtitle-data mb-3 text-center">Measured data</div>
+      <div class="subtitle-data mb-3 text-center">Measured data</div>
       <div class="measured-data">
         <label>Angle delta, degr</label>
         <span class="input-data form-control"></span>
@@ -118,5 +118,11 @@
         <span class="input-data form-control"></span>
       </div>
     </div>
-</div>
-
+    <div class="container-fluid">
+      <div class="row">
+        <div>
+          <span>{{ u1Calculation() }}</span>
+        </div>
+      </div>
+    </div>
+  </div>

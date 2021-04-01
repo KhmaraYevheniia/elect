@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { PowerCyrcleDiagramComponent } from './labs/power-cyrcle-diagram/power-cyrcle-diagram.component';
 import { ChartsModule } from 'ng2-charts';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChartsModule } from 'ng2-charts';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
