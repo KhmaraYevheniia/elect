@@ -13,14 +13,13 @@ export class PowerCyrcleDiagramComponent implements OnInit {
   public u1 = 110;
   u2 = 115;
   angle = 50;
-  rt1j = 1.3;
-  xt1i = 85.2;
-  rt2j = 1.8;
-  xt2i = 90.3;
-  rlj = 1.2;
-  xli = 7;
-  bli = 6;
-  blj = pow(10, -6);
+  rt1 = 1.3;
+  xt1 = 85.2;
+  rt2 = 1.8;
+  xt2 = 90.3;
+  rl = 1.2;
+  xl = 7;
+  bl = 6 * pow(10, -6);
 
   radian = Math.PI / 180;
   public origin = '1';
@@ -48,6 +47,10 @@ export class PowerCyrcleDiagramComponent implements OnInit {
   public matrixI: any;
   public i1Result: any;
   public i2Result: any;
+  public p1Result: any;
+  public p2Result: any;
+  public q1Result: any;
+  public q2Result: any;
 
 
   u1Calculation() {
@@ -161,12 +164,29 @@ export class PowerCyrcleDiagramComponent implements OnInit {
     const f11 = multMatrixCalc._data['0'];
     const f21 = multMatrixCalc._data['1'];
 
-    this.i1Result = evaluate(`((${f11}) - (${this.u1Calc})) / (${this.zt1Calc})`);
+    this.i1Result = round(evaluate(`((${f11}) - (${this.u1Calc})) / (${this.zt1Calc})`),3);
     console.log('i1Result >> ', this.i1Result);
 
-    this.i2Result = evaluate(`((${f21}) - (${this.u2Calc})) / (${this.zt2Calc})`);
+    this.i2Result = round(evaluate(`((${f21}) - (${this.u2Calc})) / (${this.zt2Calc})`), 3);
 
-    console.log('f i2Result >> ', this.i2Result);
+    console.log('i2Result >> ', this.i2Result);
+    console.log('angle >> ', this.angle);
+
+    const s1Result = evaluate(`(sqrt(3)) * (${this.u1Calc}) * (${this.i1Result})`)
+    console.log('s1 >> ', s1Result);
+
+    const s2Result = evaluate(`(sqrt(3)) * (${this.u2Calc}) * (${this.i2Result})`)
+    console.log('s2 >> ', s2Result);
+
+    this.p1Result = round((s1Result.re), 3);
+    console.log('p1 >> ', this.p1Result);
+
+    this.q1Result = round((s1Result.im), 3);
+
+    this.p2Result = round((s2Result.re), 3);
+    this.q2Result = round((s2Result.im), 3);
+
+
 
 
 

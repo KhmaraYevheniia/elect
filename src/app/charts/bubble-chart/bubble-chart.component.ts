@@ -22,6 +22,7 @@ export class BubbleChartComponent implements OnInit {
     this.bubbleChartData = [{
       data: [
         { x: this.x, y: this.y.re, r: 6 },
+        // { x: this.x, y: this.y.re, r: 6 },
       ],
       label: 'I1',
     }]
@@ -40,7 +41,7 @@ export class BubbleChartComponent implements OnInit {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 0.8,
+          max: 100,
         }
       }]
     }
