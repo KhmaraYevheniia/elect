@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
@@ -8,7 +8,25 @@ import { Color, Label } from 'ng2-charts';
   styleUrls: ['./bubble-chart.component.css']
 })
 
-export class BubbleChartComponent {
+
+export class BubbleChartComponent implements OnInit {
+  @Input() x: number = 0;
+  @Input() y: {im: number, re: number};
+  constructor() {}
+
+  ngOnInit() {
+
+    // this.calc.ngOnInit();
+    // console.log('x', this.calc.angle);
+    // console.log('y', this.calc.i1Result);
+    this.bubbleChartData = [{
+      data: [
+        { x: this.x, y: this.y.re, r: 6 },
+      ],
+      label: 'I1',
+    }]
+  }
+
   public bubbleChartColors: any;
   public bubbleChartOptions: ChartOptions = {
     responsive: true,
@@ -16,13 +34,13 @@ export class BubbleChartComponent {
       xAxes: [{
         ticks: {
           min: 0,
-          max: 5,
+          max: 70,
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 5,
+          max: 0.8,
         }
       }]
     }
@@ -30,13 +48,9 @@ export class BubbleChartComponent {
   public bubbleChartType: ChartType = 'bubble';
   public bubbleChartLegend = true;
   public bubbleChartLabels: Label[] = ['1', '2', '3', '4'];
-  public bubbleChartData: ChartDataSets[] = [
-    {
-      data: [
-        { x: 2, y: 2, r: 6 },
-      ],
-      label: 'I1',
-    },
-  ];
+  public bubbleChartData: ChartDataSets[] = [];
+
 
 }
+
+
