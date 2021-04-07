@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
@@ -9,49 +9,67 @@ import { Color, Label } from 'ng2-charts';
 })
 
 
-export class BubbleChartComponent implements OnInit {
+export class BubbleChartComponent implements OnInit, OnChanges {
   @Input() x: number = 0;
-  @Input() y: {im: number, re: number};
-  constructor() {}
+  @Input() y: number = 0;
+  @Input() xAxes = [{
+    ticks: {
+      min: 0,
+      max: 70,
+    }
+  }];
+  @Input() yAxes = [{
+    ticks: {
+      min: 0,
+      max: 100,
+    }
+  }];
 
-  ngOnInit() {
-
-    // this.calc.ngOnInit();
-    // console.log('x', this.calc.angle);
-    // console.log('y', this.calc.i1Result);
-    this.bubbleChartData = [{
-      data: [
-        { x: this.x, y: this.y.re, r: 6 },
-        // { x: this.x, y: this.y.re, r: 6 },
-      ],
-      label: 'I1',
-    }]
-  }
+  @Input() label: string = '';
 
   public bubbleChartColors: any;
-  public bubbleChartOptions: ChartOptions = {
-    responsive: true,
-    scales: {
-      xAxes: [{
-        ticks: {
-          min: 0,
-          max: 70,
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 100,
-        }
-      }]
-    }
-  };
+  public bubbleChartOptions: ChartOptions = {};
   public bubbleChartType: ChartType = 'bubble';
   public bubbleChartLegend = true;
   public bubbleChartLabels: Label[] = ['1', '2', '3', '4'];
   public bubbleChartData: ChartDataSets[] = [];
 
+  constructor() {}
 
+  ngOnInit() {
+    this.bubbleChartData = [{
+      data: [
+        { x: this.x, y: this.y, r: 6 },
+      ],
+      label: this.label,
+    }];
+
+    this.bubbleChartOptions = {
+      responsive: true,
+      scales: {
+        xAxes: this.xAxes,
+        yAxes: this.yAxes,
+      }
+    };
+  }
+
+
+  ngOnChanges(): void {
+    this.bubbleChartData = [{
+      data: [
+        { x: this.x, y: this.y, r: 6 },
+      ],
+      label: this.label,
+    }];
+
+    this.bubbleChartOptions = {
+      responsive: true,
+      scales: {
+        xAxes: this.xAxes,
+        yAxes: this.yAxes,
+      }
+    };
+  }
 }
 
 

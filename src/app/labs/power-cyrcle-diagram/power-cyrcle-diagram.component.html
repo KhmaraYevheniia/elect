@@ -26,8 +26,11 @@
         <img class="img-diagram " src="assets/figure1.png" alt="" width="80%">
       </div>
       <div class="btn-diagram col-3 d-flex flex-column align-items-center">
-        <button type="button" class="btn btn-outline-dark button button-150 mb-2">Calculate</button>
-        <button type="button" class="btn btn-outline-dark button button-150">Chart</button>
+        <button type="button" class="btn btn-outline-dark button button-150 mb-2" (click)="getColculation()">Calculate</button>
+        <button type="button"
+                class="btn btn-outline-dark button button-150"
+                (click)="getCharts()"
+               >Chart</button>
       </div>
     </div>
   </div>
@@ -76,14 +79,50 @@
         <input class="input-data" type="number" id="BL" [(ngModel)]="bl">
       </div>
     </div>
-    <div class="control-diagram-data col-6">
-      <div class="diagram-data row">
-        <app-bubble-chart *ngIf="i1Result" [x]="angle" [y]="i1Result" class="col-sm-6 col-lg-4"></app-bubble-chart>
-        <app-bubble-chart *ngIf="i1Result" [x]="angle" [y]="i2Result" class="col-sm-6 col-lg-4"></app-bubble-chart>
-        <app-bubble-chart *ngIf="i1Result" [x]="angle" [y]="p1Result" class="col-sm-6 col-lg-4" class="col-sm-6 col-lg-4"></app-bubble-chart>
-        <!-- <app-bubble-chart class="col-sm-6 col-lg-4"></app-bubble-chart> -->
-        <!-- <app-bubble-chart class="col-sm-6 col-lg-4"></app-bubble-chart> -->
-        <!-- <app-bubble-chart class="col-sm-6 col-lg-4"></app-bubble-chart> -->
+    <div class="control-diagram-data col-6 ">
+      <div class="diagram-data row" [hidden]="!showCharts">
+        <app-bubble-chart *ngIf="i1Result?.re"
+                          [x]="angle"
+                          [y]="i1Result.re"
+                          class="col-sm-6 col-lg-4"
+                          [xAxes]="graph1Axes.xAxes"
+                          [yAxes]="graph1Axes.yAxes"
+                          [label]="graphName1"></app-bubble-chart>
+        <app-bubble-chart *ngIf="i2Result?.re"
+                          [x]="angle"
+                          [y]="i2Result.re"
+                          [xAxes]="graph1Axes.xAxes"
+                          [yAxes]="graph1Axes.yAxes"
+                          [label]="graphName2"
+                          class="col-sm-6 col-lg-4"></app-bubble-chart>
+        <app-bubble-chart *ngIf="p1Result"
+                          [x]="angle"
+                          [y]="p1Result"
+                          [xAxes]="graph1Axes.xAxes"
+                          [yAxes]="graph1Axes.yAxes"
+                          [label]="graphName3"
+                          class="col-sm-6 col-lg-4" class="col-sm-6 col-lg-4"></app-bubble-chart>
+        <app-bubble-chart *ngIf="p2Result"
+                          [x]="angle"
+                          [y]="p2Result"
+                          [xAxes]="graph1Axes.xAxes"
+                          [yAxes]="graph1Axes.yAxes"
+                          [label]="graphName4"
+                          class="col-sm-6 col-lg-4"></app-bubble-chart>
+        <app-bubble-chart *ngIf="q1Result"
+                          [x]="angle"
+                          [y]="q1Result"
+                          [xAxes]="graph1Axes.xAxes"
+                          [yAxes]="graph1Axes.yAxes"
+                          [label]="graphName5"
+                          class="col-sm-6 col-lg-4"></app-bubble-chart>
+        <app-bubble-chart *ngIf="q2Result"
+                          [x]="angle"
+                          [y]="q2Result"
+                          [xAxes]="graph1Axes.xAxes"
+                          [yAxes]="graph1Axes.yAxes"
+                          [label]="graphName6"
+                          class="col-sm-6 col-lg-4"></app-bubble-chart>
       </div>
     </div>
     <div class="measured-field col-2">
@@ -119,29 +158,5 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <span>u1 >> {{ this.u1Calc }}</span>
-      <br>
-      <span>u2 >> {{ this.u2Calc }}</span>
-      <br>
-      <span>zt1 >> {{ this.zt1Calc }}</span>
-      <br>
-      <span>{{'zt2 >> '}}{{ this.zt2Calc }}</span>
-      <br>
-      <span>{{'zl >> '}}{{ this.zlCalc }}</span>
-      <br>
-      <span>{{'bl >> '}}{{ this.blCalc }}</span>
-      <br>
-      <br>
-      <br>
-      <!-- <span>{{'y22 >> '}}{{ this.y22Calc }}</span> -->
-      <span>{{'y11 >> '}}{{ this.y11Calc1 }}</span>
-      <br>
-      <span>{{i1Result}}</span>
-
-
-    </div>
-  </div>
 </div>
 
